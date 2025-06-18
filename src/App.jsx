@@ -10,11 +10,13 @@ const Button = ({ text, onClick }) => {
   );
 };
 
+// every Stat will be a tr>td+td 
 const Stat = ({ text, num }) => {
   return (
-    <>
-      <p>{text} {num}</p>
-    </>
+    <tr>
+      <td>{text}</td>
+      <td>{num}</td>
+    </tr>
   );
 };
 
@@ -61,14 +63,16 @@ const App = () => {
       {all === 0 ? (
         <p>No feedback given</p>
       ) : (
-        <div>
-          <Stat text="good" num={good}/>
-          <Stat text="neutral" num={neutral}/>
-          <Stat text="bad" num={bad}/>
-          <Stat text="all" num={all}/>
-          <Stat text="average" num={avg}/>
-          <Stat text="positive" num={pos+' %'} />
-        </div>
+        <table>
+          <tbody>
+            <Stat text="good" num={good}/>
+            <Stat text="neutral" num={neutral}/>
+            <Stat text="bad" num={bad}/>
+            <Stat text="all" num={all}/>
+            <Stat text="average" num={avg}/>
+            <Stat text="positive" num={pos+' %'} />
+          </tbody>
+        </table>
       )}
       
     </>
